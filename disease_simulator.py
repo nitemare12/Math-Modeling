@@ -10,19 +10,20 @@ import numpy.linalg as la
 import random as randy
     
 lpop = 50
-pop = []
-stats = []
+#pop = []
+#stats = []
+#
+#for x in range(lpop):
+#    pop.append(0)
+#    stats.append(0) 
+#pop = np.array([pop])
+#stats = np.array([stats])
 
-for x in range(lpop):
-    pop.append(0)
-    stats.append(0) 
-pop = np.array([pop])
-stats = np.array([stats])
-
+pop = np.zeros((lpop, 2))
 
 def randyInfect(initInfect):
     for x in range(initInfect):
         # fix random
         infect = randy.random()
-        np.put(stats, [infect], [1])
-        print(stats)
+        np.put(pop[(infect, infect)], [infect], [1])
+        print(pop)
